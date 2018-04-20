@@ -1,8 +1,6 @@
 # EffDiceware
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/eff_diceware`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[eff.org/dice](https://www.eff.org/dice)
 
 ## Installation
 
@@ -22,7 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use in your Ruby application by requiring the gem and calling `EffDiceware.generate`:
+
+```ruby
+require "eff_diceware"
+
+EffDiceware.generate(5)
+
+# => "fondue machine blasphemy diffused reaffirm"
+```
+
+You can also create passphrases from the command line:
+
+```shell
+$ diceware -n5
+decent uncoated geologist april stubborn
+```
 
 ## Development
 
@@ -32,10 +45,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/eff_diceware.
+Bug reports and pull requests are welcome on GitHub at https://github.com/EFForg/eff_diceware.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+The wordlist file is distributed under the [Creative Commons Attribution License](https://creativecommons.org/licenses/by/3.0/us/).
