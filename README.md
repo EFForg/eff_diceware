@@ -1,7 +1,5 @@
 # EffDiceware
 
-[eff.org/dice](https://www.eff.org/dice)
-
 ## Installation
 
 Add this line to your application's Gemfile:
