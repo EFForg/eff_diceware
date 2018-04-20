@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+
+require "eff_diceware"
+
+words = 5
+phrases = 1
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: diceware [options] [count]"
+
+  opts.separator ""
+  opts.separator "Generate [count] secure passphrase(s) using the diceware method."
+
+  opts.separator ""
+  opts.separator "Options:"
+
+  opts.on("-n", "--words N", "Generate phrase with N words") do |n|
+    words = n.to_i
+  end
+
+  opts.separator ""
+  opts.separator "Or roll your own! https://www.eff.org/dice"
+
+  opts.version = EffDiceware::VERSION
+end.parse!
+
+unless ARGV.empty?
+  phrases = ARGV.shift.to_i
+end
+
+phrases.times{ puts EffDiceware.generate(words) }
